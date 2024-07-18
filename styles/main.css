@@ -90,7 +90,7 @@ main {
 
 /* Home Section with Background Image */
 .home-section {
-  background: url('/images/bg-1.jpg') no-repeat center center fixed;
+  background: url('images/bg-1.jpg') no-repeat center center fixed;
   background-size: cover;
   padding: 100px 0;
   color: white;

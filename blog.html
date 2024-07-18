@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Jayraj's Wildlife Portfolio</title>
+    <link rel="stylesheet" href="Styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <!-- Include Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Main Content -->
+    <main>
+        <section id="blog" class="section">
+            <div class="container">
+                <h2>Wildlife Blog</h2>
+
+                <!-- Blog Post 1-->
+                <div class="blog-post">
+                    <article>
+                        <h3>Exploring the Savannah: A Day with the Lions</h3>
+                        <p class="date">July 20, 2024</p>
+                        <img src="images/blog-lions.jpg" alt="Lions in the Savannah">
+                        <p class="summary">Join me as I recount a thrilling day spent observing the majestic lions in the African savannah. From their powerful roars to their graceful movements, discover the untamed beauty of these magnificent creatures.</p>
+                        <p class="full-content hidden">
+                            The African savannah is a vast, open landscape dotted with acacia trees and teeming with wildlife. It is here that we find the king of beasts, the lion. These magnificent animals are the apex predators of the savannah, commanding respect and admiration from all who encounter them.
+
+                            On our safari, we witnessed the lions in their natural habitat, interacting with each other and displaying their hunting prowess. We saw a pride of lions lounging under the shade of an acacia tree, their golden fur glistening in the sunlight. Their powerful roars echoed across the plains, a reminder of their dominance in this ecosystem.
+
+                            As the day progressed, we observed the lions stalking their prey with stealth and precision. Their keen senses and strategic hunting techniques are a testament to their survival skills. We also witnessed the social dynamics within the pride, including the nurturing behavior of the lionesses towards their cubs.
+
+                            This experience offered an intimate glimpse into the lives of these incredible animals and highlighted the importance of conserving their natural habitat. The savannah is a fragile ecosystem, and it is our responsibility to ensure that it remains a sanctuary for the wildlife that calls it home.
+                        </p>
+                        <a href="#" class="read-more">Read More</a>
+                    </article>
+                    
+                    <!-- Add more articles as needed -->
+                </div>
+                <!-- Blog Post 2 -->
+                <div class="blog-post">
+                    <article>
+                        <h3>Sunset Safari: Capturing the Golden Hour</h3>
+                        <p class="date">August 5, 2024</p>
+                        <img src="images/blog-sunset.jpg" alt="Sunset Safari">
+                        <p class="summary">Experience the magic of the golden hour as we embark on a sunset safari. From the warm hues of the setting sun to the silhouettes of wildlife, discover the beauty of twilight in the wild.</p>
+                        <p class="full-content hidden">
+                            The golden hour in the savannah is a photographer's dream. As the sun dips towards the horizon, the landscape is bathed in a warm, golden light that creates stunning contrasts and enhances the colors of the environment.
+
+                            During our sunset safari, we captured breathtaking images of wildlife against the backdrop of the setting sun. The silhouettes of giraffes and elephants against the orange sky provided a dramatic and picturesque scene. The tranquil atmosphere of the evening was a perfect end to our day, with the soft light highlighting the textures and colors of the savannah.
+
+                            The fading light also revealed a different side of the wildlife, as nocturnal animals began to stir. This transition from day to night offered a unique perspective on the savannah and its inhabitants. It was a reminder of the ever-changing beauty of nature and the importance of preserving these incredible landscapes.
+                        </p>
+                        <a href="#" class="read-more">Read More</a>
+                    </article>
+                </div>
+
+                <!-- Blog Post 3 -->
+                <div class="blog-post">
+                    <article>
+                        <h3>The Great Migration: A Spectacle of Nature</h3>
+                        <p class="date">September 10, 2024</p>
+                        <img src="images/blog-migration.jpg" alt="The Great Migration">
+                        <p class="summary">Witness one of nature's greatest spectacles as we follow the great migration across the Serengeti. Discover the challenges and triumphs of this epic journey.</p>
+                        <p class="full-content hidden">
+                            The great migration is one of the most awe-inspiring events in the natural world. Each year, millions of wildebeest, zebras, and gazelles make their way across the Serengeti in search of fresh grazing lands. This epic journey is fraught with challenges, from crossing crocodile-infested rivers to facing predators on the hunt.
+
+                            Our experience tracking the migration offered a front-row seat to this incredible spectacle. We observed the herds moving in synchrony, their movements creating a mesmerizing wave across the plains. The sheer scale of the migration was a testament to the resilience and endurance of these animals.
+
+                            The migration also highlights the interconnectedness of the ecosystem. The movement of the herds influences the distribution of resources and the behavior of other species. Witnessing this grand event underscored the importance of conservation efforts to protect these critical habitats and ensure the survival of the wildlife that relies on them.
+                        </p>
+                        <a href="#" class="read-more">Read More</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Include Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="scripts/script.js"></script>
+    <script>
+        // Load the navbar
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.read-more').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const article = e.target.closest('article');
+                    const summary = article.querySelector('.summary');
+                    const fullContent = article.querySelector('.full-content');
+
+                    if (fullContent.classList.contains('hidden')) {
+                        fullContent.classList.remove('hidden');
+                        summary.classList.add('hidden');
+                        e.target.textContent = 'Read Less';
+                        fullContent.style.opacity = 1; // Ensure full content is visible
+                        fullContent.style.maxHeight = fullContent.scrollHeight + 'px'; // Allow for dynamic content height
+                    } else {
+                        fullContent.classList.add('hidden');
+                        summary.classList.remove('hidden');
+                        e.target.textContent = 'Read More';
+                        fullContent.style.opacity = 0;
+                        fullContent.style.maxHeight = 0; // Collapse content
+                    }
+                });
+            });
+
+            // Ensure all content is hidden initially
+            document.querySelectorAll('.full-content').forEach(content => {
+                content.classList.add('hidden');
+                content.style.opacity = 0; // Initially hidden with opacity
+                content.style.maxHeight = 0; // Initially collapsed
+            });
+        });
+        // Load the footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jayraj's Wildlife Portfolio</title>
+    <link rel="stylesheet" href="Styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <!-- Include Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section with Background Image -->
+        <section id="home" class="home-section">
+            <div class="content">
+                <div class="profile">
+                    <img src="images/profile.jpg" alt="Jayraj's Profile Photo">
+                    <h1>Welcome to my Wildlife Photography Portfolio!</h1>
+                    <p>
+                        Hello, I'm Jayraj, a passionate wildlife photographer based in Philadelphia. 
+                        Explore the beauty and diversity of African wildlife through my lens.
+                    </p>
+                </div>
+                <!-- Featured Photos Carousel -->
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="tile">
+                            <img data-src="images/Wildlife/Cheetah/DSC01556.jpg" alt="Featured Photo 1">
+                        </div>
+                        <div class="tile">
+                            <img data-src="images/Wildlife/Elephant/DSC04952.jpg" alt="Featured Photo 2">
+                        </div>
+                        <div class="tile">
+                            <img data-src="images/Wildlife/Rhino/DSC01932.jpg" alt="Featured Photo 3">
+                        </div>
+                        <div class="tile">
+                            <img data-src="images/OtherCategories/Nature/DSC00687.jpg" alt="Featured Photo 4">
+                        </div>
+                        <div class="tile">
+                            <img data-src="images/OtherCategories/Nature/DSC00975.jpg" alt="Featured Photo 5">
+                        </div>
+                        <div class="tile">
+                            <img data-src="images/OtherCategories/Nature/DSC05892.jpg" alt="Featured Photo 6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Include Footer -->
+        <div id="footer-placeholder"></div>
+    </main>
+    <script src="scripts/script.js"></script>
+    <!-- JavaScript for Carousel (if using Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Initialize Bootstrap Carousel (if using Bootstrap)
+        $('.carousel').carousel();
+    </script>
+    <script>
+        // Load the navbar
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            });
+        // Load the footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+
+</html>

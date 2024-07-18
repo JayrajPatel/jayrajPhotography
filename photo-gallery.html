@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery | Jayraj's Wildlife Portfolio</title>
+    <link rel="stylesheet" href="Styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Include Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <main>
+        <section id="photo-gallery" class="section">
+            <div class="container">
+                <h2>Photo Gallery</h2>
+
+                <!-- Wildlife Category -->
+                <div class="category">
+                    <h3>Wildlife</h3>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="images/Wildlife/Cheetah/DSC01556.jpg" alt="Wildlife Image 1">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/Wildlife/Elephant/DSC04952.jpg" alt="Wildlife Image 2">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/Wildlife/Rhino/DSC01932.jpg" alt="Wildlife Image 3">
+                        </div>
+                        <!-- Add more images as needed -->
+                    </div>
+                </div>
+
+                <!-- Landscape Category -->
+                <div class="category">
+                    <h3>Landscape</h3>
+                    <div class="gallery-grid landscape-grid">
+                        <div class="gallery-item">
+                            <img src="images/Landscape/Amboseli.jpg" alt="Landscape Image 1">
+                        </div>
+                        <!-- Add more images as needed -->
+                    </div>
+                </div>
+
+                <!-- Nature Category -->
+                <div class="category">
+                    <h3>Nature</h3>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="images/OtherCategories/Nature/DSC00687.jpg" alt="Nature Image 1">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/OtherCategories/Nature/DSC00975.jpg" alt="Nature Image 2">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/OtherCategories/Nature/DSC05892.jpg" alt="Nature Image 3">
+                        </div>
+                        <!-- Add more images as needed -->
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Include Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Load the navbar
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            });
+
+        // Load the footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
